@@ -95,6 +95,7 @@
         background: #fff;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
       }
+
       @media (max-width: 480px) {
         .chat-panel {
           height: 70vh;
@@ -137,7 +138,7 @@
       }
       .input-area {
         padding: 10px;
-        border-top: 1px solid #e5e7eb;
+        border-top: 1px solid #333;
       }
       .qr {
         display: flex;
@@ -147,6 +148,7 @@
       }
       .qr button {
         background: #e5e7eb;
+        color: #333;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         font-size: 0.875rem;
@@ -486,7 +488,7 @@
         <div class="flex items-center gap-2 mt-2">
           <textarea
             id="chatInput"
-            class="flex-1 border rounded-xl p-2 hidden"
+            class="flex-1 border rounded-xl p-2 hidden text-black"
             rows="1"
             placeholder="Type your message"
           ></textarea>
