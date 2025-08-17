@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MAC | Avoid the Top 3 Costly Government Contracting Mistakes</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #002147;
+        --gold: #b8860b;
+      }
+      html,
+      body {
+        font-family: "Inter", system-ui, Arial, Helvetica, sans-serif;
+        background: #0d121b;
+      }
+      .brand-gradient {
+        background: linear-gradient(135deg, var(--navy), #0b2f66);
+      }
+      .card {
+        background: #0f1730;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      }
+      .card-light {
+        background: #111827;
+      }
+      .eyebrow {
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .gold {
+        color: var(--gold);
+      }
+      .btn {
+        background: var(--gold);
+        color: #fff;
+        border-radius: 0.75rem;
+        font-weight: 700;
+        padding: 0.9rem 1.25rem;
+      }
+      .btn:hover {
+        filter: brightness(0.95);
+      }
+      .input {
+        background: #0b1326;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.75rem;
+        padding: 0.85rem 1rem;
+        color: #fff;
+      }
+      .input::placeholder {
+        color: #94a3b8;
+      }
+      .section {
+        padding: 64px 0;
+      }
+      /* Floating chatbot container */
+      .chat-fab {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 50;
+        background: var(--gold);
+        color: #fff;
+        border-radius: 9999px;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+      }
+      .chat-panel {
+        position: fixed;
+        right: 20px;
+        bottom: 88px;
+        z-index: 50;
+        width: 360px;
+        max-width: calc(100vw - 40px);
+        height: 520px;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      }
+      @media (max-width: 480px) {
+        .chat-panel {
+          height: 70vh;
+        }
+      }
+      .chat-header {
+        background: var(--navy);
+        color: #fff;
+        padding: 14px 16px;
+        font-weight: 700;
+      }
+      .close-x {
+        cursor: pointer;
+        opacity: 0.85;
+      }
+      .close-x:hover {
+        opacity: 1;
+      }
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        background: #f9fafb;
+        padding: 12px;
+      }
+      .message {
+        max-width: 80%;
+        border-radius: 0.75rem;
+        padding: 0.6rem 0.9rem;
+        margin-bottom: 0.6rem;
+      }
+      .message.bot {
+        background: #e0f2fe;
+        color: #002147;
+        align-self: flex-start;
+      }
+      .message.user {
+        background: #002147;
+        color: #fff;
+        align-self: flex-end;
+      }
+      .input-area {
+        padding: 10px;
+        border-top: 1px solid #e5e7eb;
+      }
+      .qr {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .qr button {
+        background: #e5e7eb;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+      }
+      .qr button:hover {
+        background: #d1d5db;
+      }
+      .qr button.selected {
+        background: #002147;
+        color: #fff;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="text-white">
+    <!-- HEADER / HERO -->
+    <header class="brand-gradient">
+      <div class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center gap-8"
+        >
+          <div class="flex-1">
+            <div class="eyebrow text-slate-300 mb-2">
+              Free Guide + Webinar Entry
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+              Avoid the
+              <span class="gold"
+                >Top 3 Costly Government Contracting Mistakes</span
+              >
+              That Disqualify Bids
+            </h1>
+            <p class="mt-4 text-slate-200 text-lg">
+              From 30 Years Inside the Government Review Process — by
+              <strong>“MAC”</strong>, former government approvals officer.
+            </p>
+            <ul class="mt-5 text-slate-300 space-y-2 list-disc list-inside">
+              <li>Instant access to the full guide on this page.</li>
+              <li>
+                Enter a drawing for our <strong>Jan 2026</strong> exclusive
+                webinar:
+                <em
+                  >“Mastering Government Submissions: Insider Secrets to Avoid
+                  Disqualification & Win More Contracts”</em
+                >
+                (<strong>$1500 value</strong> | 25 seats).
+              </li>
+            </ul>
+          </div>
+
+          <!-- LEAD FORM CARD -->
+          <div class="w-full md:max-w-md card p-6 rounded-2xl">
+            <h2 class="text-xl font-bold mb-2">Get the PDF + Webinar Entry</h2>
+            <p class="text-slate-300 text-sm mb-4">
+              Get a copy of the guide in your inbox and enter the Jan 2026
+              webinar drawing.
+            </p>
+            <form id="leadForm" class="space-y-3">
+              <!-- honey pot -->
+              <input
+                type="text"
+                name="company"
+                id="company"
+                class="hidden"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <div>
+                <label class="block text-sm text-slate-300 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  class="input w-full"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-sm text-slate-300 mb-1">Email</label>
+                <input
+                  class="input w-full"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="you@company.com"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-sm text-slate-300 mb-1"
+                  >Phone (optional)</label
+                >
+                <input
+                  class="input w-full"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="+1 (555) 555-1234"
+                />
+              </div>
+
+              <label class="flex items-start gap-2 text-sm text-slate-300">
+                <input type="checkbox" required />
+                <span
+                  >I agree to be contacted about the guide and webinar drawing
+                  in Jan 2026. I can opt out anytime.</span
+                >
+              </label>
+
+              <button class="btn w-full" type="submit">
+                Send me the PDF + Enter Me
+              </button>
+              <p id="leadStatus" class="text-sm text-slate-300"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- TRUST BAND -->
+    <section class="section">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="card rounded-2xl p-5">
+            <div class="eyebrow text-slate-400">Authority</div>
+            <h3 class="font-bold text-lg mt-1">30+ Years Inside</h3>
+            <p class="text-slate-300 mt-2">
+              Reviewed and approved contracts across multiple agencies. We know
+              exactly why bids fail—or win.
+            </p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <div class="eyebrow text-slate-400">Focus</div>
+            <h3 class="font-bold text-lg mt-1">Technical + Pricing</h3>
+            <p class="text-slate-300 mt-2">
+              We zero in on the two areas that disqualify bids most
+              often—generic technicals and pricing precision.
+            </p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <div class="eyebrow text-slate-400">Clarity</div>
+            <h3 class="font-bold text-lg mt-1">Compliance First</h3>
+            <p class="text-slate-300 mt-2">
+              Crystal-clear, pass/fail compliance checklists to keep you in
+              contention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL GUIDE CONTENT -->
+    <section id="guide" class="section bg-[#0b1326]">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-6">
+          The Top 3 Costly Government Contracting Mistakes
+        </h2>
+
+        <!-- Mistake #1 -->
+        <article class="card-light rounded-2xl p-6 mb-6">
+          <h3 class="text-xl font-bold mb-2 gold">
+            Mistake #1: The "Generic Technical Proposal" Trap
+          </h3>
+          <p class="text-slate-200 mb-3">
+            <strong>What it is:</strong> Submitting a boilerplate technical
+            proposal that fails to directly address the specific language,
+            nuances, and unstated needs of the Request for Proposal (RFP) or
+            Solicitation. Government reviewers can spot a generic submission a
+            mile away, and it signals a lack of understanding or commitment to
+            their unique problem.
+          </p>
+          <p class="text-slate-200 mb-3">
+            <strong>Why it's costly:</strong> Immediate disqualification or a
+            significantly lower technical score, pushing you out of contention
+            before your price is even considered. Often, one proposal writer is
+            tasked with both technical and pricing, leading to a diluted focus
+            on technical specificity.
+          </p>
+          <p class="text-slate-200">
+            <strong>Insider Tip:</strong> Every RFP is a conversation. Read
+            between the lines. Tailor every single section of your technical
+            proposal to the agency's explicit and implied requirements. Use
+            their exact terminology. Show you understand their problem better
+            than anyone else.
+          </p>
+        </article>
+
+        <!-- Mistake #2 -->
+        <article class="card-light rounded-2xl p-6 mb-6">
+          <h3 class="text-xl font-bold mb-2 gold">
+            Mistake #2: Pricing Precision & Contract Type Misunderstanding
+          </h3>
+          <p class="text-slate-200 mb-3">
+            <strong>What it is:</strong> Failing to price the solicitation
+            exactly as required, or misunderstanding the implications of the
+            contract type. Many government contracts are Firm-Fixed Price
+            (F-F-P), which the government prefers as it places all risk on the
+            contractor. Errors here include:
+          </p>
+          <ul class="text-slate-200 list-disc list-inside mb-3 space-y-2">
+            <li>
+              Inaccurate, inconsistent, or poorly substantiated cost proposals.
+            </li>
+            <li>
+              Lack of clear justification for proposed costs, especially for
+              indirect rates.
+            </li>
+            <li>
+              Not accounting for the full risk of an F-F-P contract, leading to
+              losses.
+            </li>
+            <li>
+              Misunderstanding the nuances of Cost-Reimbursement, Time &amp;
+              Materials (T&amp;M), or Labor Hour (LH) contracts (which exclude
+              materials).
+            </li>
+          </ul>
+          <p class="text-slate-200 mb-3">
+            <strong>Why it's costly:</strong> Pricing must be exact. Errors lead
+            to immediate rejection for being “non-responsive,” or trigger
+            lengthy, costly negotiations that erode your profit margins.
+            Misjudging contract type risk can turn a winning bid into a
+            financial disaster.
+          </p>
+          <p class="text-slate-200">
+            <strong>Insider Tip:</strong> Treat your cost proposal with the same
+            rigor as your technical solution. Ensure absolute consistency across
+            all financial documents. Understand the risk profile of the contract
+            type before you bid. For F-F-P, assume all risk and price
+            accordingly.
+          </p>
+        </article>
+
+        <!-- Mistake #3 -->
+        <article class="card-light rounded-2xl p-6">
+          <h3 class="text-xl font-bold mb-2 gold">
+            Mistake #3: Neglecting Compliance & Scope Creep Pitfalls
+          </h3>
+          <p class="text-slate-200 mb-3">
+            <strong>What it is:</strong> Overlooking or misinterpreting critical
+            requirements detailed in the solicitation's compliance matrix,
+            Section L (Instructions, Conditions, and Notices to Offerors), and
+            Section M (Evaluation Factors for Award). This includes:
+          </p>
+          <ul class="text-slate-200 list-disc list-inside mb-3 space-y-2">
+            <li>Failing to address every single “shall” statement.</li>
+            <li>Not providing required certifications or representations.</li>
+            <li>
+              Missing specific page limits, font sizes, or file naming
+              conventions.
+            </li>
+            <li>
+              For Personal Services Contracts, unclear boundaries lead to “other
+              duties as assigned,” expanding scope without compensation.
+            </li>
+          </ul>
+          <p class="text-slate-200 mb-3">
+            <strong>Why it's costly:</strong> These are often pass/fail
+            criteria. A single missed “shall” or formatting error can lead to
+            outright rejection. Unmanaged scope creep breeds contempt and
+            financial losses.
+          </p>
+          <p class="text-slate-200">
+            <strong>Insider Tip:</strong> Build a detailed compliance checklist
+            from the RFP. Dissect it. Assign owners for each requirement. For
+            personal services, define deliverables and scope precisely to avoid
+            undefined work. The government will check compliance; you must
+            manage scope.
+          </p>
+        </article>
+
+        <div class="mt-8 p-6 rounded-2xl card">
+          <h4 class="text-lg font-bold mb-2">Want to Dive Deeper?</h4>
+          <p class="text-slate-300 mb-3">
+            In our live session, you'll learn additional pitfalls,
+            agency-specific nuances, and get your questions answered. Your entry
+            to the free seat give-away is reserved when you submit the form
+            above—watch your inbox for details.
+          </p>
+          <p class="text-slate-400 text-sm">
+            MAC Shield of Approval • contractmac.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="section">
+      <div
+        class="max-w-6xl mx-auto px-4 text-slate-400 text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+      >
+        <div>© <span id="yr"></span> MAC Consulting • All rights reserved</div>
+        <div class="flex gap-4">
+          <a href="#guide" class="hover:text-white">Guide</a>
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- CHATBOT TRIGGER -->
+    <button
+      id="fab"
+      class="chat-fab"
+      aria-label="Open chat"
+      title="Chat with MAC's Assistant"
+    >
+      <!-- simple chat icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 2H4a2 2 0 0 0-2 2v20l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
+        />
+      </svg>
+    </button>
+
+    <!-- CHATBOT PANEL (your provided logic, slightly adapted for fetch to backend) -->
+    <div id="chatPanel" class="chat-panel">
+      <div class="chat-header flex items-center justify-between">
+        <span>MAC's AI Assistant</span>
+        <span id="closeChat" class="close-x">✕</span>
+      </div>
+      <div id="chatMessages" class="chat-messages flex flex-col"></div>
+      <div id="chatInputArea" class="input-area">
+        <div id="qr" class="qr"></div>
+        <div class="flex items-center gap-2 mt-2">
+          <textarea
+            id="chatInput"
+            class="flex-1 border rounded-xl p-2 hidden"
+            rows="1"
+            placeholder="Type your message"
+          ></textarea>
+          <button id="chatSend" class="btn hidden">Send</button>
+        </div>
+        <!-- contact form (shown when qualified) -->
+        <div id="chatForm" class="hidden mt-3 bg-[#f9fafb] p-3 rounded-xl">
+          <h4 class="text-[#111827] font-semibold mb-1 text-center">
+            Request a Consultation
+          </h4>
+          <p class="text-[#374151] text-sm text-center mb-2">
+            Share your details and MAC's team will reach out.
+          </p>
+          <input
+            id="cName"
+            class="w-full border rounded-xl p-2 mb-2"
+            placeholder="Your Name"
+          />
+          <input
+            id="cEmail"
+            type="email"
+            class="w-full border rounded-xl p-2 mb-2"
+            placeholder="Your Email"
+          />
+          <input
+            id="cPhone"
+            class="w-full border rounded-xl p-2 mb-2"
+            placeholder="Your Phone (optional)"
+          />
+          <textarea
+            id="cMsg"
+            rows="3"
+            class="w-full border rounded-xl p-2 mb-2"
+            placeholder="Briefly describe your needs"
+          ></textarea>
+          <button id="cSubmit" class="btn w-full">Submit Request</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE & CHAT SCRIPTS -->
+    <script>
+      // Year
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Lead form submit to backend
+      const leadForm = document.getElementById("leadForm");
+      const leadStatus = document.getElementById("leadStatus");
+      leadForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        leadStatus.textContent = "Submitting...";
+        const data = {
+          type: "guide-signup",
+          name: leadForm.name.value.trim(),
+          email: leadForm.email.value.trim(),
+          phone: leadForm.phone.value.trim(),
+          // honey pot:
+          company: document.getElementById("company").value || "",
+        };
+        try {
+          const res = await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          const json = await res.json();
+          if (res.ok) {
+            leadStatus.textContent =
+              "Thanks! Check your inbox for the PDF link and webinar drawing confirmation.";
+            leadForm.reset();
+          } else {
+            leadStatus.textContent =
+              json?.message || "Something went wrong. Please try again.";
+          }
+        } catch (err) {
+          leadStatus.textContent = "Network error. Please try again.";
+        }
+      });
+
+      // --- Chatbot (adapted from your snippet) ---
+      const fab = document.getElementById("fab");
+      const panel = document.getElementById("chatPanel");
+      const closeChat = document.getElementById("closeChat");
+      const msgs = document.getElementById("chatMessages");
+      const chatInput = document.getElementById("chatInput");
+      const chatSend = document.getElementById("chatSend");
+      const qr = document.getElementById("qr");
+      const chatForm = document.getElementById("chatForm");
+      const cSubmit = document.getElementById("cSubmit");
+
+      let cState = "start";
+      let qIdx = 0;
+      const answers = {};
+      const faqs = {
+        "What is SAM.gov?":
+          "SAM.gov is where entities register to do business with the U.S. government and find opportunities.",
+        "What is the FAR?":
+          "The FAR is the Federal Acquisition Regulation—the core rulebook for government contracting.",
+        "Contract types MAC handles?":
+          "Firm-Fixed Price (F-F-P), Cost-Reimbursement, Time & Materials (T&M), and Labor Hour (LH).",
+        "Help with proposal writing?":
+          "Yes—tailoring technicals to the RFP’s exact language and unstated needs.",
+        "Help with pricing?":
+          "Yes—precise cost structures, rate justification, and risk-aware pricing.",
+        "Compliance support?":
+          "Yes—compliance matrix, Section L & M, pass/fail checks, and scope control for personal services.",
+      };
+      const qList = [
+        {
+          id: "goal",
+          question: "What's your primary goal?",
+          options: [
+            "Win my first contract",
+            "Improve proposal success",
+            "Ensure compliance",
+            "Manage current contracts",
+            "Other (type below)",
+          ],
+        },
+        {
+          id: "rev",
+          question: "Approx. annual revenue?",
+          options: ["Under $1M", "$1M - $5M", "$5M - $25M", "Over $25M"],
+        },
+        {
+          id: "active",
+          question: "Are you currently bidding/managing?",
+          options: ["Yes, actively", "No, exploring"],
+        },
+        {
+          id: "area",
+          question: "What help do you need?",
+          options: [
+            "Technical Proposal",
+            "Cost/Price Proposal",
+            "Compliance",
+            "Negotiation/Strategy",
+            "Post-Award",
+            "Other (type below)",
+          ],
+        },
+      ];
+
+      function pushMsg(text, who = "bot") {
+        const el = document.createElement("div");
+        el.className = "message " + who;
+        el.textContent = text;
+        msgs.appendChild(el);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      function showQR(options) {
+        qr.innerHTML = "";
+        chatInput.classList.add("hidden");
+        chatSend.classList.add("hidden");
+        options.forEach((o) => {
+          const b = document.createElement("button");
+          b.textContent = o;
+          b.onclick = () => handleUser(o, true);
+          qr.appendChild(b);
+        });
+        qr.classList.remove("hidden");
+      }
+      function hideQR() {
+        qr.innerHTML = "";
+        qr.classList.add("hidden");
+        chatInput.classList.remove("hidden");
+        chatSend.classList.remove("hidden");
+      }
+
+      function startChat() {
+        msgs.innerHTML = "";
+        pushMsg("Hi there! I'm MAC's assistant. How can I help today?");
+        showQR([
+          "I have a question (FAQ)",
+          "I'm interested in a consultation",
+          "Tell me about the free guide/webinar",
+        ]);
+        cState = "start";
+      }
+
+      function handleUser(text, quick = false) {
+        const val = quick ? text : chatInput.value.trim();
+        if (!quick && !val) return;
+        pushMsg(val, "user");
+        chatInput.value = "";
+
+        if (cState === "start") {
+          if (
+            val.toLowerCase().includes("faq") ||
+            val.toLowerCase().includes("question")
+          ) {
+            cState = "faq";
+            pushMsg("Here are common topics I can answer:");
+            showQR(
+              Object.keys(faqs).concat([
+                "Something else (type below)",
+                "Back to menu",
+              ])
+            );
+            chatInput.classList.remove("hidden");
+            chatSend.classList.remove("hidden");
+          } else if (val.toLowerCase().includes("consult")) {
+            cState = "qualify";
+            qIdx = 0;
+            pushMsg(qList[qIdx].question);
+            showQR(qList[qIdx].options);
+          } else if (
+            val.toLowerCase().includes("guide") ||
+            val.toLowerCase().includes("webinar")
+          ) {
+            pushMsg(
+              "Download the free guide via the form above—you're also entered for the Jan 2026 webinar drawing (25 seats, $1500 value)."
+            );
+            showQR([
+              "I have a question (FAQ)",
+              "I'm interested in a consultation",
+            ]);
+          } else {
+            pushMsg("Please choose an option or type 'faq' or 'consultation'.");
+            showQR([
+              "I have a question (FAQ)",
+              "I'm interested in a consultation",
+              "Tell me about the free guide/webinar",
+            ]);
+          }
+          return;
+        }
+
+        if (cState === "faq") {
+          if (faqs[val]) {
+            pushMsg(faqs[val]);
+            pushMsg("Anything else?");
+            showQR(
+              Object.keys(faqs).concat([
+                "Something else (type below)",
+                "Back to menu",
+              ])
+            );
+            chatInput.classList.remove("hidden");
+            chatSend.classList.remove("hidden");
+          } else if (val.toLowerCase().includes("something")) {
+            hideQR();
+            pushMsg("Go ahead—what’s your question?");
+            cState = "faq-free";
+          } else if (val.toLowerCase().includes("back")) {
+            startChat();
+          } else {
+            pushMsg(
+              "I can help with SAM.gov, FAR, contract types, proposals, pricing, and compliance."
+            );
+            showQR(
+              Object.keys(faqs).concat([
+                "Something else (type below)",
+                "Back to menu",
+              ])
+            );
+          }
+          return;
+        }
+
+        if (cState === "faq-free") {
+          pushMsg(
+            "Thanks. For detailed cases, a consult is best. Would you like to request one?"
+          );
+          showQR(["Yes, request consultation", "No, back to menu"]);
+          cState = "faq-follow";
+          return;
+        }
+
+        if (cState === "faq-follow") {
+          if (val.toLowerCase().startsWith("yes")) {
+            cState = "qualify";
+            qIdx = 0;
+            pushMsg(qList[qIdx].question);
+            showQR(qList[qIdx].options);
+          } else {
+            startChat();
+          }
+          return;
+        }
+
+        if (cState === "qualify") {
+          answers[qList[qIdx].id] = val;
+          qIdx++;
+          if (qIdx < qList.length) {
+            pushMsg(qList[qIdx].question);
+            showQR(qList[qIdx].options);
+          } else {
+            // Evaluate
+            qr.innerHTML = "";
+            qr.classList.add("hidden");
+            chatInput.classList.add("hidden");
+            chatSend.classList.add("hidden");
+            const rev = answers.rev,
+              active = answers.active || answers["active"];
+            if (
+              rev === "Under $1M" &&
+              (active?.toLowerCase()?.includes("exploring") ||
+                active === "No, exploring")
+            ) {
+              pushMsg(
+                "Best starting point: grab the free guide above and watch for the Jan 2026 webinar invite. Packed with MAC’s 30 years of insights."
+              );
+              startChat();
+            } else {
+              pushMsg(
+                "Great—MAC’s consultation will likely be a strong fit. Share a few details to schedule a call."
+              );
+              chatForm.classList.remove("hidden");
+              cState = "await-contact";
+            }
+          }
+          return;
+        }
+      }
+
+      // Contact submit from chatbot -> backend
+      cSubmit?.addEventListener("click", async () => {
+        const name = document.getElementById("cName").value.trim();
+        const email = document.getElementById("cEmail").value.trim();
+        const phone = document.getElementById("cPhone").value.trim();
+        const msg = document.getElementById("cMsg").value.trim();
+        if (!name || !email) {
+          alert("Please provide name and email.");
+          return;
+        }
+
+        try {
+          const res = await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              type: "chatbot-consult",
+              name,
+              email,
+              phone,
+              message: msg,
+              qualification: answers,
+            }),
+          });
+          const json = await res.json();
+          if (res.ok) {
+            pushMsg("Thanks! The team will reach out shortly.");
+            document.getElementById("cName").value = "";
+            document.getElementById("cEmail").value = "";
+            document.getElementById("cPhone").value = "";
+            document.getElementById("cMsg").value = "";
+            chatForm.classList.add("hidden");
+            startChat();
+          } else {
+            alert(json?.message || "Something went wrong.");
+          }
+        } catch (e) {
+          alert("Network error, try again.");
+        }
+      });
+
+      // Chat controls
+      fab.addEventListener("click", () => {
+        panel.style.display = "flex";
+        startChat();
+      });
+      closeChat.addEventListener("click", () => {
+        panel.style.display = "none";
+      });
+
+      chatSend.addEventListener("click", () => handleUser());
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          handleUser();
+        }
+      });
+    </script>
+  </body>
+</html>
